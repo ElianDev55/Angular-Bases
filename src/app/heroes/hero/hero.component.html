@@ -1,0 +1,52 @@
+
+
+<h3>
+  {{ capitalizedName }}
+</h3>
+
+<dl>
+  <td>
+    Name:
+  </td>
+  <dd>
+    {{ name }}
+  </dd>
+  <td>
+    Alter Ego:
+  </td>
+  <dd>
+    {{ alterEgo }}
+  </dd>
+  <td>
+    Super Power:
+  </td>
+  <dd>
+    Web Slinging
+  </dd>
+</dl>
+
+
+<h4>
+  {{ getfullName() }}
+</h4>
+
+<button
+  *ngIf="name !== 'Peter Parker'"
+  (click)="changeName()"
+  class="btn btn-primary">
+  Cambiar nombre
+</button>
+
+<button
+  *ngIf="alterEgo !== 'Spiderman'"
+  (click)="changeAlterEgo()"
+  class="btn btn-primary">
+  Cambiar alter ego
+</button>
+
+<button
+  *ngIf="name == 'Peter Parker' || alterEgo == 'Spiderman'"
+  (click)="reset()"
+  class="btn btn-primary">
+  Reset
+</button>
